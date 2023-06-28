@@ -1,0 +1,6 @@
+1. LLMs have trouble with lots of context, recreating text verbatim and counting.
+2. Use basic UNIX tools to process just the bits of files that are relevant. Eg `grep -n -C`.
+3. Check any big changes before proceeding to stop errors cascading.
+4. Git diff may help.
+5. Watch out for off by one errors.
+6. Try to minimise the need to escape special characters.

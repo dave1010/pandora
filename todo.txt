@@ -1,0 +1,8 @@
+1. Create initial project structure and files.
+2. Implement basic functionality for /exec, /getGuide, /writeFile endpoints.
+3. Write the LLM's guide to effective text editing.
+4. Set up Dockerfile and docker scripts.
+5. Write tests for the API methods.
+6. Review and test the entire setup.
+7. Document usage and risks in README.md.
+8. Finalize and commit all changes.
