@@ -1,9 +1,10 @@
 <?php
 
-// Test the /getGuide endpoint
+$guide = file_get_contents(__DIR__ . '/../the-llms-guide-to-effective-text-editing.txt');
 
-// Make the API request
-$response = file_get_contents('http://localhost:8000/api/getGuide');
+$apiResponse = file_get_contents('http://localhost:8000/api/getGuide');
+$apiResponse = json_decode($apiResponse, true);
 
-// Check the response
-assert(strpos($response, 'The LLM\'s Guide to Effective Text Editing') !== false, 'Unexpected response from /getGuide endpoint.');
+assert($apiResponse['guide'] === $guide, 'Guide from API does not match guide file');
+
+echo "Test passed!\n";
