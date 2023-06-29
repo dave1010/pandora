@@ -1,9 +1,18 @@
 {
-  "name": "Pandora",
-  "description": "A lightweight and powerful plugin for OpenAI's ChatGPT.",
+  "schema_version": "v1",
+  "name_for_human": "Pandora",
+  "name_for_model": "Pandora",
+  "description_for_human": "Pandora is a lightweight and powerful tool for interacting with the file system and executing shell commands.",
+  "description_for_model": "Pandora allows interacting with a filesystem, managing files, executing shell commands and connecting to the internet.",
+  "auth": {
+    "type": "none"
+  },
   "api": {
-    "url": "http://localhost:8000/api/",
-    "authentication": "none"
-  }
+    "type": "openapi",
+    "url": "http://localhost:8000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "",
+  "contact_email": "",
+  "legal_info_url": ""
 }
-/* TODO: check the kaguya ai-plugin.json for the right syntax */

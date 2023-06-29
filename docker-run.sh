@@ -10,7 +10,7 @@ for dir in $(ls -d $DIR/mounts/*/ 2>/dev/null); do
 done;
 
 # Run the Docker container
-docker run -d -p 8000:8000 -v $(pwd):/pandora -v /var/run/docker.sock:/var/run/docker.sock $MOUNTS pandora
+docker run -p 8000:8000 -v $(pwd):/pandora -v /var/run/docker.sock:/var/run/docker.sock $MOUNTS pandora
 
 # TODO can this run with sh instead of bash?
 # TODO is it set to read only mounting? we probably want write too

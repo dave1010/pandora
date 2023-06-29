@@ -8,7 +8,7 @@ Pandora is designed to be used in a controlled environment and it should be used
 
 ## Basic Usage
 
-TODO: Include basic usage instructions here.
+TODO: Include basic usage instructions here. mention WORKDIR and the guide
 
 ## Usage with Other Docker Containers
 

@@ -4,7 +4,7 @@ WORKDIR /pandora
 
 COPY . .
 
-CMD [ "php", "-S", "0.0.0.0:8000", "-t", "public" ]
+CMD [ "php", "-S", "0.0.0.0:8000", "lib/router.php" ]
 
 # TODO: get the git author things from the parent's Dockerfile
 

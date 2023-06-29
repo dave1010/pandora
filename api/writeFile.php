@@ -1,6 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../lib/headers.php';
 require_once __DIR__ . '/../lib/functions.php';
 
 $data = getJsonInput();

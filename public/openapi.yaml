@@ -1,11 +1,13 @@
 openapi: 3.0.0
 info:
   title: Pandora
+  description: Pandora is a lightweight and powerful tool for interacting with the file system and executing shell commands.
   version: 1.0.0
 paths:
   /exec:
     post:
       summary: Executes a shell command.
+      operationId: exec
       requestBody:
         required: true
         content:
@@ -24,12 +26,14 @@ paths:
           description: The command was executed successfully.
   /getGuide:
     get:
+      operationId: getGuide
       summary: Returns the LLM's guide to effective text editing. This must be read and understood.
       responses:
         '200':
           description: The guide was returned successfully.
   /writeFile:
     post:
+      operationId: writeFile
       summary: Writes content to a file.
       requestBody:
         required: true

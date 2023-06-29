@@ -4,3 +4,4 @@ Write tests for the API methods.
 Review and test the entire setup.
 Document usage and risks in README.md.
 Finalize and commit all changes.
+read web page command?

@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../lib/headers.php';
-
+// TODO getJsonInput()
 $command = $_POST['command'] ?? null;
 
 if (!$command) {
