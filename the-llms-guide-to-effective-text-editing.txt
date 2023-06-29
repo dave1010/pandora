@@ -13,3 +13,7 @@ Check any big changes before proceeding to stop errors cascading. `git diff -- p
 Watch out for off by one errors with line numbers. Consider new line at end of file.
 
 Try to minimise the need to escape special characters.
+
+Files may also be changed by the user. Don't assume there are no changes if you haven't seen them in a while.
+
+Your actions may be destructive. Ask if not sure.
