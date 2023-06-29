@@ -16,12 +16,15 @@ paths:
                 command:
                   type: string
                   description: The shell command to execute.
+                guide-followed:
+                  type: bool
+                  description: Whether the guide is being followed. Must be true
       responses:
         '200':
           description: The command was executed successfully.
   /getGuide:
     get:
-      summary: Returns the LLM's guide to effective text editing.
+      summary: Returns the LLM's guide to effective text editing. This must be read and understood.
       responses:
         '200':
           description: The guide was returned successfully.
@@ -44,6 +47,14 @@ paths:
                 force:
                   type: boolean
                   description: If true, overwrite the file if it exists.
+                appendNewline:
+                  description: Append a newline to the end of the file.
+                  type: boolean
+                permissions:
+                  description: The file permissions to set, in octal format with leading 0 (e.g., "0644").
+                  required: false
+                  type: string
+                  pattern: '^[0-7]{4}$'
       responses:
         '200':
           description: The file was written successfully.

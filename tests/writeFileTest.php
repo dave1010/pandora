@@ -1,23 +1,37 @@
 <?php
 
-// Test the /writeFile endpoint
+$filename = 'test-'.md5(time());
+$content = 'Hello, World!';
+$force = true;
+$appendNewline = true;
+$permissions = '0644';
 
-// Define the file path and content
-$filePath = __DIR__ . '/../sample-file.txt';
-$content = 'Hello, world!';
+$data = [
+    'filePath' => $filename,
+    'content' => $content,
+    'force' => $force,
+    'appendNewline' => $appendNewline,
+    'permissions' => $permissions,
+];
 
-// Make the API request
-$response = file_get_contents('http://localhost:8000/api/writeFile', false, stream_context_create([
+$options = [
     'http' => [
         'method' => 'POST',
-        'header' => 'Content-Type: application/x-www-form-urlencoded',
-        'content' => http_build_query(['filePath' => $filePath, 'content' => $content]),
+        'header' => "Content-Type: application/json\r\n",
+        'content' => json_encode($data),
     ],
-]));
+];
 
-// Check the response
-$responseData = json_decode($response, true);
-assert($responseData['message'] === 'File written successfully.', 'Unexpected response from /writeFile endpoint.');
+$context = stream_context_create($options);
+$result = json_decode(file_get_contents('http://localhost:8000/api/writeFile', false, $context), true);
 
-// Check the file content
-assert(file_get_contents($filePath) === $content, 'Unexpected file content.');
+assert($result['message'] === 'File written successfully.');
+
+$localFile = dirname(__DIR__).'/WORKDIR/'.$filename;
+
+assert(file_get_contents($localFile) === $content . "\n");
+assert(substr(sprintf('%o', fileperms($localFile)), -4) === $permissions);
+
+unlink($localFile);
+
+echo "Test passed!\n";

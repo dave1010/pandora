@@ -10,6 +10,10 @@ if (!$command) {
     return;
 }
 
+if ($command[0] !== '/') {
+    $command = 'cd ' . dirname(__DIR__) . '/WORKDIR && ' . $command;
+}
+
 $output = shell_exec($command);
 
 echo json_encode(['output' => $output]);
