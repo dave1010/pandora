@@ -1,7 +1,9 @@
 <?php
 
-// TODO getJsonInput()
-$command = $_POST['command'] ?? null;
+require_once __DIR__ . '/../lib/functions.php';
+
+$data = getJsonInput();
+$command = $data['command'] ?? null;
 
 if (!$command) {
     http_response_code(400);
