@@ -13,7 +13,6 @@ done;
 docker run -d -p 8000:8000 -v $(pwd):/pandora -v /var/run/docker.sock:/var/run/docker.sock $MOUNTS pandora
 
 # TODO can this run with sh instead of bash?
-# TODO make executeable
 # TODO is it set to read only mounting? we probably want write too
 # TODO add some helpful output for the user
 # TODO get Dave to test the mount behaviour is working
