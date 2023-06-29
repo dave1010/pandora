@@ -1,3 +1,5 @@
+The LLM's Guide to Effective Text Editing
+
 Context: LLMs have trouble with lots of context, recreating text verbatim, counting and following strict syntax.
 
 Helpful guidelines:

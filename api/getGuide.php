@@ -1,7 +1,12 @@
 <?php
 
-require_once '../lib/headers.php';
+require_once __DIR__ . '/../lib/headers.php';
+require_once __DIR__ . '/../lib/functions.php';
 
-$guide = file_get_contents('../the-llms-guide-to-effective-text-editing.txt');
+// Read the guide file
+$guide = file_get_contents(__DIR__ . '/../the-llms-guide-to-effective-text-editing.txt');
 
-echo json_encode(['guide' => $guide]);
+// Return the guide
+http_response_code(200);
+header('Content-Type: text/plain');
+echo $guide;

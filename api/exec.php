@@ -1,15 +1,22 @@
 <?php
 
-require_once '../lib/headers.php';
+require_once __DIR__ . '/../lib/headers.php';
+require_once __DIR__ . '/../lib/functions.php';
 
-$postData = json_decode(file_get_contents('php://input'), true);
+// Extract the command from the request body
+$command = $_POST['command'] ?? null;
 
-if (!isset($postData['command'])) {
+// Ensure the command is provided
+if (!$command) {
     http_response_code(400);
-    echo json_encode(['error' => 'Missing command parameter.']);
-    exit;
+    echo json_encode(['error' => 'No command provided.']);
+    return;
 }
 
-$command = $postData['command'];
+// Execute the command
+$output = shell_exec($command);
 
-// TODO: Execute the command and return the result.
+// Return the output
+http_response_code(200);
+header('Content-Type: text/plain');
+echo $output;
