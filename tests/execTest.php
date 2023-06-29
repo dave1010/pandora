@@ -14,5 +14,10 @@ $response = file_get_contents('http://localhost:8000/api/exec', false, stream_co
     ],
 ]));
 
+// Decode the JSON response
+$response = json_decode($response, true);
+
 // Check the response
-assert($response === "Hello, world!\n", 'Unexpected response from /exec endpoint.');
+assert($response['output'] === "Hello, world!\n", 'Unexpected response from /exec endpoint.');
+
+echo "Test passed!\n";
