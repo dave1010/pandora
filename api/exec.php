@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../../lib/headers.php';
+require_once __DIR__ . '/../lib/headers.php';
 
 $command = $_POST['command'] ?? null;
 
@@ -11,7 +11,5 @@ if (!$command) {
 }
 
 $output = shell_exec($command);
-
-header('Content-Type: application/json');
 
 echo json_encode(['output' => $output]);
