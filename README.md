@@ -13,7 +13,7 @@ Pandora can be used for:
 * data processing
 * connecting to the internet
 * interacting with other Docker containers
-* releasing curses upon mankind
+* releasing curses upon mankind (don't try this)
 
 Demo: https://chat.openai.com/share/9df39ba5-6779-4abf-9372-95535a97c4ff
 
@@ -40,7 +40,7 @@ There is not much that Pandora cannot do.
 
 ## Requirements
 
-* Docker (you could probably run it locally)
+* Docker. You may be able to run Pandora locally, without Docker
 * Access to ChatGPT plugin development
 
 ## Setup
@@ -60,7 +60,7 @@ There's 3 commands:
 
 * `exec` - execute a command
 * `writeFile` - write a file. This is separate as ChatGPT struggles if it needs to escape special characters and new lines.
-* `getGuide` - fetch a guide. ChatGPT isn't perfect. This guide (`the-guide.txt`) helps it get better results.
+* `getGuide` - fetch a guide. ChatGPT has limitations. This guide (`the-guide.txt`) helps it get better results.
 
 See `static/openapi.yaml` for full details.
 
@@ -70,7 +70,7 @@ Run `docker exec -it $(docker ps -qf "ancestor=pandora") sh`
 
 ## Mounting other directories
 
-From your host, tou can mount other projects into Pandora's `MOUNTS` directory.
+From your host, you can mount other projects into Pandora's `MOUNTS` directory.
 
     ln -s $PWD/your-project /path/to/pandora/MOUNTS/
 
@@ -78,7 +78,7 @@ This needs to be done before the container is started (with `docker-run.sh`)
 
 `docker-run.sh` will then mount them into `/pandora/WORKDIR/`, allowing ChatGPT to read and write them.
 
-On a Mac, `ls -l` seems to show an extra metadata flag on the file. This seems to have no effect. Hou can run `xattr -d com.apple.provenance` to remove it if you want.
+Side note: On a Mac, `ls -l` seems to show an extra metadata flag files that Pandora creates in mounted folders. This seems to have no effect. You can run `xattr -d com.apple.provenance` to remove the metadata flag if you want.
 
 ## Usage with Other Docker Containers
 
