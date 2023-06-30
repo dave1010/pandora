@@ -43,3 +43,6 @@ if ($permissions !== null) {
 // Return a success message
 http_response_code(200);
 echo json_encode(['message' => 'File written successfully.']);
+
+// TODO: rename appendNewline to appendNewlineAtEOF
+// TODO: add appendContent flag

@@ -23,6 +23,10 @@ if ($command[0] !== '/') {
     $command = 'cd ' . dirname(__DIR__) . '/WORKDIR && ' . $command;
 }
 
-$output = shell_exec($command);
+$output = doExec($command);
 
-echo json_encode(['output' => $output]);
+if (isset($output['return_value']) && $output['return_value'] !== 0) {
+    $output['help'] = 'VERY IMPORTANT: check the guide (getGuide) for how to fix problems before attempting something yourself!';
+}
+
+echo json_encode($output);
