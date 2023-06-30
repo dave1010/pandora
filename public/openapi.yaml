@@ -27,7 +27,7 @@ paths:
   /getGuide:
     get:
       operationId: getGuide
-      summary: Returns the LLM's guide to effective text editing. This must be read and understood.
+      summary: Returns the LLM's guide to this plugin. This MUST be read and understood.
       responses:
         '200':
           description: The guide was returned successfully.
