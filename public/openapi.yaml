@@ -59,6 +59,9 @@ paths:
                   required: false
                   type: string
                   pattern: '^[0-7]{4}$'
+                guideFollowed:
+                  type: bool
+                  description: Whether the guide is being followed. Must be true
       responses:
         '200':
           description: The file was written successfully.
