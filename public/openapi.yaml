@@ -17,8 +17,8 @@ paths:
               properties:
                 command:
                   type: string
-                  description: The shell command to execute.
-                guide-followed:
+                  description: Shell command to execute. Eg `ls .`, `curl foo`, `apt-get install foo`
+                guideFollowed:
                   type: bool
                   description: Whether the guide is being followed. Must be true
       responses:

@@ -3,7 +3,7 @@
   "name_for_human": "Pandora",
   "name_for_model": "Pandora",
   "description_for_human": "Pandora is a lightweight and powerful tool for interacting with the file system and executing shell commands.",
-  "description_for_model": "Pandora allows interacting with a filesystem, managing files, executing shell commands and connecting to the internet.",
+  "description_for_model": "Pandora allows doing absolutely anything at all with a computer: managing files, installing and executing commands, coding and connecting to the internet.",
   "auth": {
     "type": "none"
   },

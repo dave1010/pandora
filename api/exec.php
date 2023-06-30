@@ -4,6 +4,14 @@ require_once __DIR__ . '/../lib/functions.php';
 
 $data = getJsonInput();
 $command = $data['command'] ?? null;
+$readGuide = $data['guideFollowed'] ?? false;
+
+if (!$readGuide) {
+    http_response_code(400);
+    echo json_encode(['error' => 'The guide must have been read recently.']);
+    return;
+}
+
 
 if (!$command) {
     http_response_code(400);
