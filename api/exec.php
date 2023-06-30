@@ -8,7 +8,7 @@ $readGuide = $data['guideFollowed'] ?? false;
 
 if (!$readGuide) {
     http_response_code(400);
-    echo json_encode(['error' => 'The guide must have been read recently.']);
+    echo json_encode(['error' => 'The guide must have been read recently and followed.']);
     return;
 }
 

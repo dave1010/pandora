@@ -6,7 +6,7 @@ info:
 paths:
   /exec:
     post:
-      summary: Executes a shell command.
+      summary: Executes a shell command. Current dir is /pandora/WORKDIR
       operationId: exec
       requestBody:
         required: true
@@ -17,10 +17,11 @@ paths:
               properties:
                 command:
                   type: string
-                  description: Shell command to execute. Eg `ls .`, `curl foo`, `apt-get install foo`
+                  description: Shell command to execute. Eg `ls .`, `curl foo`, `apk add foo`, `docker run`
                 guideFollowed:
                   type: bool
-                  description: Whether the guide is being followed. Must be true
+                  required: false
+                  description: Whether the guide has been read and is being followed
       responses:
         '200':
           description: The command was executed successfully.
@@ -34,7 +35,7 @@ paths:
   /writeFile:
     post:
       operationId: writeFile
-      summary: Writes content to a file.
+      summary: Writes content to a file. Current dir is /pandora/WORKDIR
       requestBody:
         required: true
         content:
@@ -61,7 +62,8 @@ paths:
                   pattern: '^[0-7]{4}$'
                 guideFollowed:
                   type: bool
-                  description: Whether the guide is being followed. Must be true
+                  required: false
+                  description: Whether the guide has been read and is being followed
       responses:
         '200':
           description: The file was written successfully.
