@@ -1,3 +1,5 @@
 read web page command? (not much benefit over `curl | lynx`)
 option to disable mounting docker.sock in docker-run.sh - maybe a new docker-run-no-sock.sh
 option to mount dirs read only with `:ro` in docker-run.sh
+add git to Dockerfile
+pass git author config (maybe other config too) from host to container
