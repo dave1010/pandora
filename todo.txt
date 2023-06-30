@@ -1,7 +1,3 @@
-Implement basic functionality for /exec, /getGuide, /writeFile endpoints.
-Set up Dockerfile and docker scripts.
-Write tests for the API methods.
-Review and test the entire setup.
-Document usage and risks in README.md.
-Finalize and commit all changes.
-read web page command?
+read web page command? (not much benefit over `curl | lynx`)
+option to disable mounting docker.sock in docker-run.sh - maybe a new docker-run-no-sock.sh
+option to mount dirs read only with `:ro` in docker-run.sh
