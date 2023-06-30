@@ -1,18 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get the absolute path of this script
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # Loop over directories in the mounts directory and mount them
+# change to :ro for read only
 MOUNTS=""
-for dir in $(ls -d $DIR/mounts/*/ 2>/dev/null); do
-    MOUNTS+="-v $(realpath $dir):/pandora/$(basename $dir):ro "
+for dir in $(ls -d $DIR/MOUNTS/*/ 2>/dev/null); do
+    echo Mounting $(realpath $dir) to /pandora/WORKDIR/$(basename $dir)
+    MOUNTS+="-v $(realpath $dir):/pandora/WORKDIR/$(basename $dir) "
 done;
 
-# Run the Docker container
-docker run -p 8000:8000 -v $(pwd):/pandora -v /var/run/docker.sock:/var/run/docker.sock $MOUNTS pandora
+SOCK="/var/run/docker.sock"
 
-# TODO can this run with sh instead of bash?
-# TODO is it set to read only mounting? we probably want write too
-# TODO add some helpful output for the user
-# TODO get Dave to test the mount behaviour is working
+docker run -p 8000:8000 -v $(pwd):/pandora -v $SOCK:$SOCK $MOUNTS -e PANDORA_CONTAINER_PATH=$(pwd) pandora
