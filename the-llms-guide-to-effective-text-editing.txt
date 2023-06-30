@@ -1,19 +1,29 @@
 The LLM's Guide to Effective Text Editing
 
-Context: LLMs have trouble with lots of context, recreating text verbatim, counting and following strict syntax.
+Context:
 
-Helpful guidelines:
+* LLMs have trouble with lots of context, recreating text verbatim, counting and following strict syntax.
+* Taking account of these guidelines is critical to being effective.
 
-Use basic UNIX tools to process just the bits of files that are relevant. Eg `grep -n -C`, head, tail, cut, and awk.
+General guidelines:
 
-Be safe and explicit. Use robust commands and flags like `cp -n`. Check you're in the right dir.
+* Files may also be changed by the user. Don't assume there are no changes if you haven't seen them in a while.
 
-Check any big changes before proceeding to stop errors cascading. `git diff -- path` may help.
+Text editing:
 
-Watch out for off by one errors with line numbers. Consider new line at end of file.
+* Use basic UNIX tools to process just the bits of files that are relevant. Eg `grep -n -C`, head, tail, cut, and awk.
+* Temp files may help
+* Watch out for off by one errors with line numbers. Consider new line at end of file.
 
-Try to minimise the need to escape special characters.
+Running commands:
 
-Files may also be changed by the user. Don't assume there are no changes if you haven't seen them in a while.
+* Be safe and explicit. Use robust commands and flags like `cp -n`. Check you're in the right dir.
+* Check any big changes before proceeding to stop errors cascading. `git diff -- path` may help.
+* Minimise the need to escape special characters.
+* Your actions may be destructive. Ask if not sure.
 
-Your actions may be destructive. Ask if not sure.
+Fixing problems:
+
+* install with apt-get install
+* if things fail more than once then stop and ask the user
+* if you're confident that you can fix a problem then go for it
