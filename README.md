@@ -110,4 +110,6 @@ Pandora is little more than a PHP file that executes what ChatGPT sends to it.
 
 Please send PRs!
 
+If you get ChatGPT to change the API endpoints then you may get `UnrecognizedKwargsError` until you refresh the plugin in the ChatGPT Plugin devtools sidebar.
+
 Also let me know how well it works, any success you've had and suggestions for `the-guide.txt` by feeding back here: https://github.com/dave1010/pandora/issues/1
