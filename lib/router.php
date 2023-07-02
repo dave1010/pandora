@@ -29,6 +29,9 @@ if (file_exists($path)) {
         case 'yaml':
             header('Content-Type: application/x-yaml');
             break;
+        case 'png':
+            header('Content-Type: image/png');
+            break;
     }
 
     readfile($path);

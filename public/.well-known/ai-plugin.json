@@ -12,7 +12,7 @@
     "url": "http://localhost:8000/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "",
+  "logo_url": "http://localhost:8000/pandoras-box-icon.png",
   "contact_email": "",
   "legal_info_url": ""
 }

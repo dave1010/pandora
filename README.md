@@ -1,6 +1,8 @@
 # Pandora
 
-Pandora gives ChatGPT the ability to read and write files and run commands on your machine.
+**Pandora gives ChatGPT the ability to read and write files and run commands on your machine.**
+
+![Pandora icon](images/pandoras-box-icon-small.png)
 
 Pandora is a lightweight and powerful plugin for OpenAI's ChatGPT. It provides a barebones API that allows ChatGPT to execute arbitrary shell commands and perform file operations, making it a versatile tool for a wide range of tasks.
 
@@ -19,6 +21,8 @@ Pandora can be used for:
 * releasing curses upon mankind (please don't try this)
 
 The idea for Pandora came from playing with [Kaguya](https://github.com/ykdojo/kaguya), a Node project with similar functionality. Pandora is more lightweight and is focused on letting the AI find and use tools itself, including letting it install software and run Docker containers.
+
+[Pandoras box icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/pandoras-box).
 
 ## Demos
 
