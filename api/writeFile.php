@@ -8,7 +8,7 @@ $filePath = $data['filePath'];
 $content = $data['content'];
 $force = $data['force'];
 $appendNewline = $data['appendNewline'] ?? false;
-$permissions = $data['permissions'];
+$permissions = $data['permissions'] ?? null;
 
 // Ensure all required parameters are provided
 if (!$filePath || $content === null) {
