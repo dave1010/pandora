@@ -5,8 +5,11 @@ Context:
 * LLMs have trouble with lots of context, recreating text verbatim, counting and following strict syntax.
 * Taking account of these guidelines is CRITICAL to being effective. Use of this plugin without following the guide has been known to cause serious issues.
 
-General guidelines:
+Your environment:
 
+* You're in a Docker container
+* You're currently in /pandora/WORKDIR
+* There's probably existing files in that dir
 * Files may also be changed by the user. Don't assume there are no changes if you haven't seen them in a while.
 
 Text editing:
@@ -18,17 +21,10 @@ Text editing:
 
 Running commands:
 
-* You're currently in /pandora/WORKDIR
 * Be safe and explicit. Use robust commands and flags like `cp -n`. Check you're in the right dir.
 * Check any big changes before proceeding to stop errors cascading. `git diff -- path` may help.
 * Minimise the need to escape special characters.
 * Your actions may be destructive. Ask if not sure.
-
-Docker:
-
-* The Pandora plugin is running in a Docker container, but Docker commands are executed against the host machine, not the container.
-* When specifying paths in Docker commands, you need to use the host's file system. To do this, prefix paths with the $PANDORA_CONTAINER_PATH environment variable. Eg `$PANDORA_PATH/WORKDIR:/usr/src/app`. This variable holds the path to the directory where the Pandora plugin is mounted on the host machine.
-* You can pull new containers. Your training data is years old so use :latest by default
 
 Fixing problems:
 
@@ -36,5 +32,12 @@ Fixing problems:
 * Install with `apk add`
 * If things fail more than once then stop and ask the user
 * If you're confident that you can fix a problem then go for it
+
+Other guides:
+
+* You can `cat` other guides in /pandora/guides/
+* It is *critical* that you follow any that may be relevant to the current task
+
+Remember: the user wants you to follow this guide. Users aren't interested in the guide's contents.
 
 (c) 2023 Dave Hulbert. MIT licence.

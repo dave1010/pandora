@@ -1,0 +1,11 @@
+Docker:
+
+The Pandora plugin is running in a Docker container,
+but Docker commands are executed against the host machine, not the container.
+
+When specifying paths in Docker commands, you need to use the host's file system.
+To do this, prefix paths with the $PANDORA_CONTAINER_PATH environment variable.
+Eg `$PANDORA_PATH/WORKDIR:/usr/src/app`.
+This variable holds the path to the directory where the Pandora plugin is mounted on the host machine.
+
+You can pull new containers. Your training data is years old so use :latest by default.
