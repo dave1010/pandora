@@ -6,9 +6,7 @@ $data = getJsonInput();
 
 $filePath = $data['filePath'];
 $content = $data['content'];
-$force = $data['force'];
-$appendNewline = $data['appendNewline'] ?? false;
-$permissions = $data['permissions'] ?? null;
+$force = $data['force'] ?? false;
 
 // Ensure all required parameters are provided
 if (!$filePath || $content === null) {
@@ -21,28 +19,19 @@ if ($filePath[0] !== '/') {
     $filePath = dirname(__DIR__) . '/WORKDIR/' . $filePath;
 }
 
-// Check if the file already exists
 if (file_exists($filePath) && !$force) {
     http_response_code(400);
     echo json_encode(['error' => 'File already exists.']);
     return;
 }
 
-// Write the content to the file
-file_put_contents($filePath, $content);
+$newLine = ($data['appendNewlineAtEOF'] ?? false ? "\n" : "");
 
-if ($appendNewline) {
-    file_put_contents($filePath, "\n", FILE_APPEND);
+file_put_contents($filePath, $content . $newLine);
+
+if (isset($data['permissions'])) {
+    chmod($filePath, octdec($data['permissions']));
 }
 
-// Change the file permissions if the flag is set
-if ($permissions !== null) {
-    chmod($filePath, octdec($permissions));
-}
-
-// Return a success message
 http_response_code(200);
 echo json_encode(['message' => 'File written successfully.']);
-
-// TODO: rename appendNewline to appendNewlineAtEOF
-// TODO: add appendContent flag

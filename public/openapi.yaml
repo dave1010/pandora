@@ -52,9 +52,11 @@ paths:
                 force:
                   type: boolean
                   description: If true, overwrite the file if it exists.
-                appendNewline:
+                  required: true
+                appendNewlineAtEOF:
                   description: Append a newline to the end of the file.
                   type: boolean
+                  default: false
                 permissions:
                   description: The file permissions to set, in octal format with leading 0 (e.g., "0644").
                   required: false
