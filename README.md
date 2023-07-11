@@ -108,6 +108,44 @@ do this when it reads the guide.
 
 You can disable this behaviour by removing it from [`docker-run.sh`](docker-run.sh).
 
+### Interacting with your host machine
+
+As well as modifying its own container and managing Docker, you can even get Pandora to interact
+with your host machine.
+
+These require manually running a Python on your machine, so don't run by default.
+
+🚨❗️⚠️ **Make sure you understand what these are doing before you run them!** 🚨❗️⚠️
+
+#### Running commands
+
+If you really want to open Pandora's box then you can ask it to run commands on your Docker host.
+This requires running a small Python webserver [`host/host_command.py`](host/host_command.py) on port 8080.
+
+    python3 host/host_command.py
+
+When ChatGPT tries to run a command, it will ask you for confirmation before running the command.
+Currently only supports macOS.
+If you tell ChatGPT to run a command on your host machine, it should find the relevant guide 
+[`guides/running-commands-on-docker-host.txt`](guides/running-commands-on-docker-host.txt)
+and walk you through the steps.
+
+This is useful for things like running `say` after a long running command or potentially
+interacting with your desktop.
+
+#### Getting secrets
+
+You can let ChatGPT use secrets without having to send them to OpenAI!
+This requires a separate small Python webserver: [`host/get-secret.py`](host/get-secret.py) on port 8080.
+
+    python host/get-secret.py
+
+ChatGPT will ask you for a secret, which will pop up a prompt and send it back to the Pandora container.
+ChatGPT can use this as an env var or pipe it into other commands, so the secret never leaves your machine.
+
+If you tell ChatGPT to get a secret from you, it should read the 
+[`guides/get-secret-keys-or-passwords-from-user-securely.txt`](guides/get-secret-keys-or-passwords-from-user-securely.txt) guide.
+
 ## How it works
 
 Pandora is little more than a PHP file that executes what ChatGPT sends to it.

@@ -1,0 +1,11 @@
+To run commands on the user's host machine:
+
+1. Ask user to run `host/host_command.py` on host machine.
+2. To execute a non-interactive command, send GET request to `http://host.docker.internal:8080/?command=<command>`.
+3. User authorizes command via dialog box on host machine.
+4. Command output returned in HTTP response, display in chat.
+
+Note:
+
+* If there's issues then look at host/host_command.py so you can help debug
+* The Pandora Docker container could be installed anywhere on the user's machine
