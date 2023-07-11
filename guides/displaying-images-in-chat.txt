@@ -4,7 +4,7 @@ It has lots of trouble doing this though, as it tries to escape the code.
 
 These rules must be followed very precicely to get images displaying correctly:
 
-* Use the ![alt](uri) markdown format
+* Use the ![alt](uri) markdown format for images
 * http://localhost:8000/ is visibile to the user and will serve files in /pandora/WORKDIR
 * Data URIs are a bad idea, unless the image is definitely under 2kB. If you must use data URIs, check the file size first and encode any spaces
 * Display the text verbatim. Not in a markdown code block. Not with backticks
@@ -12,3 +12,10 @@ These rules must be followed very precicely to get images displaying correctly:
 That last point about displaying text verbatim is incredibly important.
 If it is not followed then it will not work at all.
 ChatGPT needs to follow that point to the letter.
+
+You can also output LaTeX formatted text directly in the chat!
+
+* Inline math mode : `\(` and `\)`
+* Display math mode: insert linebreak after opening `$$`, `\[` and before closing `$$`, `\]`
+
+As with images, this must be done without backticks and not as a code block.
