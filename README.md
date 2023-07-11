@@ -157,6 +157,18 @@ Pandora is little more than a PHP file that executes what ChatGPT sends to it.
 * Encourage ChatGPT to acquire tools itself, rather than giving it the kitchen sink.
 * Very little application code, so it's easier for ChatGPT to understand and modify.
 
+## Pros and Cons vs OpenAI's Code Interpreter
+
+* Pandora can access the internet
+* Pandora can use any software
+* Pandora doesn't time out and remove your files
+* Pandora works on your local files, so you can edit them at the same time
+* CI seems a bit faster
+* CI works on your phone
+* CI keeps an interactive Python notebook process running, rather than spawning new processes for each API call
+* CI is better at displaying images (Pandora can do this but it can get confused)
+* CI lets you download files from the chat UI
+
 ## Contributing and feedback
 
 Please send PRs!
