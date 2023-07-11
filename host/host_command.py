@@ -23,3 +23,8 @@ if __name__ == '__main__':
     run()
 
 # TODO: Linux support
+# TODO: return the output of the executed command
+# TODO: ensure the command doesn't wait for user input or it will hang
+# TODO: handle timeouts better
+# TODO: maybe support async commands, notifying the user somehow
+# TODO: check escaping / encoding of command

@@ -14,3 +14,5 @@ done;
 SOCK="/var/run/docker.sock"
 
 docker run -p 8000:8000 -v $(pwd):/pandora -v $SOCK:$SOCK $MOUNTS -e PANDORA_CONTAINER_PATH=$(pwd) pandora
+
+# TODO: add a script for killing / restarting the container
