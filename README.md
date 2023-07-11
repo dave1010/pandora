@@ -29,7 +29,7 @@ The idea for Pandora came from playing with [Kaguya](https://github.com/ykdojo/k
 **[Github discussion thread with demos and examples](https://github.com/dave1010/pandora/discussions/6)**. More contributions are very welcome.
 
 * [Installing Python and running a new Docker container](https://chat.openai.com/share/9df39ba5-6779-4abf-9372-95535a97c4ff) (💬 ChatGPT transcript)
-* [Installing ffmpeg to resize a video](https://chat.openai.com/c/4acfcbb1-1df2-467f-bd8f-7794e709c3af) (💬 ChatGPT transcript)
+* [Installing ffmpeg to resize a video](https://chat.openai.com/share/ab22f639-6901-4c63-97a3-edf488dbdd09) (💬 ChatGPT transcript)
 * [Running JS in a new Node Docker container](https://twitter.com/dave1010/status/1675556922747920384) (🎬 Video)
 
 | Image | Description |
