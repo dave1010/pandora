@@ -1,4 +1,5 @@
 # Pandora
+## ChatGPT Coding Unleashed
 
 **Pandora gives ChatGPT the ability to read and write files and run commands on your machine.**
 
