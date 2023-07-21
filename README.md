@@ -9,6 +9,11 @@ Pandora is a lightweight and powerful plugin for OpenAI's ChatGPT. It provides a
 
 Pandora is incredibly powerful but also dangerous.
 
+Pandora is like an unrestricted version of the ChatGPT Code Interpreter.
+
+![Pandoa vs Code Interpreter](images/meme.jpg)
+
+
 🚨❗️⚠️ **Pandora can access and modify all files on your host system!** 🚨❗️⚠️
 
 🚨❗️⚠️ **Pandora can control other Docker containers!** 🚨❗️⚠️
