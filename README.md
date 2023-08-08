@@ -11,6 +11,9 @@ Pandora is incredibly powerful but also dangerous.
 
 Pandora is like an unrestricted version of the ChatGPT Code Interpreter.
 
+Read the [Introduction to the Pandora ChatGPT plugin](https://medium.com/@dave1010/making-pandora-a-super-charged-coding-plugin-for-chatgpt-670bbb60469d)
+blog post.
+
 ![Pandoa vs Code Interpreter](images/meme.jpg)
 
 
