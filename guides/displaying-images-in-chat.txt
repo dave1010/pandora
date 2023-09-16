@@ -12,7 +12,7 @@ These rules must be followed very precicely to get images displaying correctly:
 That last point about displaying text verbatim is incredibly important.
 If it is not followed then it will not work at all.
 ChatGPT needs to follow that point to the letter.
-
+    
 You can also output LaTeX formatted text directly in the chat!
 
 * Inline math mode : `\(` and `\)`

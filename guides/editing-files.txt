@@ -1,0 +1,21 @@
+LLMs aren't good with big files.
+
+Use sed or awk if easier.
+
+grep --line-number may help.
+
+
+<!--
+TODO. Not for LLM 
+
+benchmark:
+
+* write whole file
+* diff
+* sed/awk
+* array of lines
+
+take into account
+* accuracy
+* speed
+-->
